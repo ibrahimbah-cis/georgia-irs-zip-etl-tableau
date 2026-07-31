@@ -1,90 +1,56 @@
-Georgia IRS ZIP Code ETL & Tableau Dashboard
+Georgia IRS Tax Data ETL Dashboard | Python, SQL & Tableau
+
+Project Overview
+
+This project demonstrates an end-to-end ETL workflow using Python, SQL, SQLite, pandas, CSV, and Tableau. The goal was to transform raw 2018 IRS ZIP-code tax data into an analysis-ready dataset for examining income, tax, demographic, charitable contribution, and farming-related activity across Georgia.
+
+The workflow reduced a source table containing 27,558 records to a focused dataset of 665 Georgia ZIP-code records and prepared the results for geographic analysis in Tableau.
+
+Business Problem
+
+Raw government tax data often contains technical field names, invalid summary ZIP codes, and values that are not immediately ready for analysis. This project addresses that challenge by extracting the required fields, validating ZIP codes, isolating Georgia records, standardizing column names, and loading the cleaned data into Tableau.
+
+The analysis answers the following question:
+
+How can IRS ZIP-code data be transformed into a clean and understandable dataset for comparing economic and demographic activity across Georgia?
+
+Dashboard Preview
 
 
 
-An end-to-end analytics project that uses SQL, Python, pandas, SQLite, and Tableau to convert raw 2018 IRS ZIP-code tax data into an analysis-ready Georgia dataset and an interactive geographic dashboard.
+Tools Used
 
-The workflow reduced a 27,558-row source table to 665 valid Georgia ZIP-code records, standardized technical fields, and prepared measures for analyzing income, tax amounts, contributions, dependents, elderly taxpayers, and farming-related filing activity.
+Python — automated the extraction and export process
 
+SQL — selected, calculated, and filtered records from the database
 
+SQLite — stored the original IRS data
 
-Project Snapshot
+pandas — handled tabular query results and CSV files
 
-Area
+Tableau — created the geographic visualization
 
-Details
+GitHub — documented and presented the completed project
 
-Business goal
+ETL Process
 
-Prepare IRS tax data for ZIP-code-level analysis across Georgia
+Extract
 
-Data source
+The Python script connects to the irs18.db SQLite database and retrieves tax and demographic fields from the irsz table.
 
-2018 IRS data stored in the irsz table of an SQLite database
+The final query selects:
 
-Source volume
+State
 
-27,558 records
+ZIP code
 
-Final Georgia dataset
+Number of tax returns
 
-665 ZIP-code records and 10 analytical fields
-
-Core tools
-
-SQL, Python, pandas, SQLite, CSV, Tableau
-
-Primary deliverables
-
-Python extraction script, cleaned CSV datasets, and Tableau workbook
-
-Business Question
-
-How can raw IRS ZIP-code data be transformed into a clean analytical dataset that helps compare income, tax, demographic, and farming-related activity across Georgia?
-
-My Contribution
-
-Wrote SQL queries to extract selected tax and demographic fields from an SQLite database.
-
-Applied ZIP-code validation rules and filtered the data to Georgia.
-
-Converted monetary fields reported in thousands into full-dollar amounts.
-
-Produced a final dataset containing 665 Georgia ZIP-code records.
-
-Standardized technical field names to improve readability and analysis.
-
-Exported query results to CSV for downstream use.
-
-Built a Tableau map to compare adjusted gross income and farming-related filing activity geographically.
-
-Documented the workflow, field definitions, outputs, and limitations for portfolio review.
-
-ETL Workflow
-
-flowchart LR
-    A[(irs18.db\nSQLite Database)] --> B[SQL Extraction]
-    B --> C[Validate ZIP Codes]
-    C --> D[Filter Georgia Records]
-    D --> E[Select Tax & Demographic Fields]
-    E --> F[Clean and Rename Columns]
-    F --> G[ic5.csv\n665 Georgia Records]
-    B --> H[x4d.csv\nNationwide Cleaned Data]
-    H --> I[Tableau Georgia Filter]
-    G --> J[Analysis-Ready Dataset]
-    I --> K[Geographic Dashboard]
-
-1. Extract
-
-The Python script connects to irs18.db with SQLite and queries the irsz table. The final Georgia query selects:
-
-State and ZIP code
-
-Number of returns and individuals
+Number of individuals
 
 Number of dependents
 
-Elderly taxpayer/return measure
+Elderly taxpayer measure
 
 Adjusted gross income
 
@@ -94,27 +60,23 @@ Income tax amount
 
 Charitable contributions
 
-The SQL applies these filters:
+Transform
 
-WHERE zipcode > 1000
-  AND zipcode < 99999
-  AND state = 'GA'
+The data was prepared for analysis by:
 
-2. Transform
+Removing invalid and summary ZIP-code records
 
-The workflow prepares the extracted data for analysis by:
+Filtering the dataset to the state of Georgia
 
-Excluding invalid or summary ZIP-code records
+Converting monetary fields from thousands to full-dollar values
 
-Multiplying IRS monetary fields by 1,000 to restore full-dollar values
+Removing the unnecessary exported dataframe index
 
-Removing the exported dataframe index from the final cleaned file
+Replacing technical IRS field names with readable analytical names
 
-Renaming technical fields for readability
+Original Field
 
-Source field
-
-Final field
+Cleaned Field
 
 Description
 
@@ -142,147 +104,124 @@ contrib
 
 Charitable contributions in dollars
 
-3. Load and Visualize
+Load
 
-The cleaned data is delivered as CSV files and analyzed in Tableau. The dashboard uses:
+The transformed data was exported to CSV and connected to Tableau for geographic analysis by ZIP code.
 
-ZIP code as the geographic level
+SQLite Database → SQL Query → Python/pandas → Cleaned CSV → Tableau Dashboard
 
-Adjusted gross income (agi) to represent income concentration
+Dataset Summary
 
-Farming-related filing count (numfarm) to compare agricultural activity
+Metric
 
-A Georgia filter to focus the geographic analysis
+Result
 
-Key Results
+Original database records
 
-Measure
+27,558
 
-Georgia total
-
-ZIP-code records
+Final Georgia ZIP-code records
 
 665
 
-Tax returns (n1)
+Final analytical fields
+
+10
+
+Georgia tax returns represented
 
 4,467,540
 
-Individuals (n2)
+Georgia individuals represented
 
 8,858,760
 
-Dependents
+Aggregate adjusted gross income
 
-3,150,700
+Approximately $310.3 billion
 
-Elderly measure
+Aggregate income tax amount
 
-939,440
+Approximately $36.1 billion
 
-Adjusted gross income
+Aggregate charitable contributions
 
-$310.3 billion
+Approximately $9.1 billion
 
-Income tax amount
+The dataset contains aggregated ZIP-code statistics and does not contain individual taxpayer records.
 
-$36.1 billion
-
-Charitable contributions
-
-$9.1 billion
-
-Farming-related filings
-
-42,140
-
-Aggregate AGI per return
-
-$69,457
-
-Selected Insights
+Key Findings
 
 ZIP code 30327 had the highest aggregate adjusted gross income in the final Georgia dataset at approximately $6.27 billion.
 
 ZIP code 31513 had the highest farming-related filing count at 460.
 
-The final dataset contained approximately $310.3 billion in aggregate adjusted gross income across 665 Georgia ZIP-code records.
+The final dataset represents approximately $310.3 billion in aggregate adjusted gross income across Georgia ZIP codes.
 
-The dashboard makes it easier to compare ZIP codes with high income concentration against areas with greater farming-related filing activity.
+The Tableau map helps compare areas with greater income concentration against areas with more farming-related filing activity.
 
-These figures are aggregated ZIP-code statistics and should not be interpreted as individual taxpayer records.
-
-Repository Contents
+Repository Files
 
 Georgia-IRS-ETL-Tableau/
 ├── README.md
-├── S14wic_PyETL_IbrahimBah.py      # Python and SQL extraction workflow
-├── S14wic_ETL_IbrahimBah.twbx      # Packaged Tableau workbook
-├── ic5.csv                         # Final enriched Georgia dataset
-├── x4d.csv                         # Cleaned nationwide dataset used by Tableau
+├── S14wic_PyETL_IbrahimBah.py
+├── S14wic_ETL_IbrahimBah.twbx
+├── ic5.csv
+├── x4d.csv
 └── assets/
-    └── tableau-map-preview.png     # Dashboard preview for GitHub
+    └── tableau-map-preview.png
 
-File Guide
+File
+
+Purpose
 
 S14wic_PyETL_IbrahimBah.py
 
-Contains the SQLite connection, SQL queries, ZIP-code filters, Georgia filter, field selection, CSV export, and database cleanup steps.
+Contains the Python, SQLite, and SQL extraction workflow
 
 ic5.csv
 
-The final enriched Georgia dataset with 665 rows and 10 fields:
-
-state, zipcode, n1, numdep, agi, numfarm,
-taxamt, contrib, elderly, n2
+Final enriched Georgia dataset with 665 records and 10 fields
 
 x4d.csv
 
-A cleaned nationwide dataset with 27,557 rows and 8 fields. The Tableau workbook uses this dataset and applies a Georgia filter within the visualization.
+Cleaned nationwide dataset used by the Tableau workbook
 
 S14wic_ETL_IbrahimBah.twbx
 
-The packaged Tableau workbook containing the geographic visualization and its associated data connection.
+Packaged Tableau workbook
 
-How to Review the Project
+assets/tableau-map-preview.png
 
-Open README.md for the project overview and findings.
+Dashboard image displayed in this README
 
-Review S14wic_PyETL_IbrahimBah.py to see the SQL extraction and filtering logic.
+Skills Demonstrated
 
-Open ic5.csv to inspect the final Georgia analysis dataset.
+Writing SQL queries with calculated fields and filtering conditions
 
-Open S14wic_ETL_IbrahimBah.twbx in Tableau Desktop or Tableau Public to explore the visualization.
+Connecting Python to a SQLite database
 
-Technical Skills Demonstrated
+Extracting and exporting data with pandas
 
-SQL selection, filtering, and calculated fields
+Validating records and reconciling row counts
 
-SQLite database connectivity
+Cleaning and standardizing analytical field names
 
-Python scripting
+Building ZIP-code-level geographic visualizations in Tableau
 
-pandas dataframe handling and CSV export
-
-Data cleaning and field standardization
-
-Data validation and row-count reconciliation
-
-Tableau geographic visualization
-
-ETL documentation and project organization
+Documenting a complete ETL project for technical and nontechnical audiences
 
 Project Limitations
 
-The data represents Tax Year 2018 and is not current economic data.
+The dataset represents Tax Year 2018 and should not be treated as current economic data.
 
-Values are aggregated by ZIP code and do not represent individual taxpayers.
+All values are aggregated by ZIP code.
 
-The original Python file depends on the course-provided cis2010utils5 utility and the local irs18.db database, which are not included in this public repository.
+The original course script depends on the locally provided irs18.db database and cis2010utils5.py utility file, which are not included in the public repository.
 
-The Tableau workbook uses x4d.csv with a Georgia filter, while ic5.csv is the enriched Georgia-only output containing the additional elderly and n2 fields.
+The Tableau workbook uses the cleaned nationwide x4d.csv dataset with a Georgia filter, while ic5.csv is the enriched Georgia-only output.
 
 What I Learned
 
-This project strengthened my ability to connect database querying with a complete analytics workflow. I practiced translating a business question into SQL logic, validating records before analysis, creating understandable field names, exporting structured data, and using Tableau to communicate geographic patterns. Most importantly, I learned how each ETL stage supports the quality and usability of the final visualization.
+This project strengthened my understanding of how SQL, Python, databases, and data visualization work together in an ETL pipeline. I gained experience extracting relevant data, applying validation rules, preparing clear analytical fields, reconciling outputs, and communicating geographic trends through Tableau.
 
