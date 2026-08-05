@@ -119,6 +119,7 @@ After filtering and selecting Georgia records, the final Georgia extract contain
 
 ## Repository Structure
 
+''' text
 Georgia-IRS-ETL-Tableau/
 │
 ├── README.md
@@ -130,7 +131,7 @@ Georgia-IRS-ETL-Tableau/
 └── assets/
     └── Tableau-US-Visualization.png 
     └── Tableau-Georgia-Visualization.png
-
+'''
 
 ## Key Results
 
