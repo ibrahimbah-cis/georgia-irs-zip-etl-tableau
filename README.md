@@ -94,9 +94,6 @@ Tableau is used to:
 - **CSV** — Storage of transformed datasets
 - **GitHub** — Project documentation and version control
 
-## Dashboard Preview
-
-![Georgia IRS Tableau Dashboard](assets/tableau-map-preview.png)
 
 ## Dataset Summary
 
@@ -116,7 +113,7 @@ After filtering and selecting Georgia records, the final Georgia extract contain
 | `S14wic_ETL_IbrahimBah.twbx` | Packaged Tableau workbook |
 | `x4d.csv` | Cleaned nationwide dataset |
 | `ic5.csv` | Cleaned Georgia-focused dataset |
-| `assets/tableau-map-preview.png` | Dashboard preview image |
+| `Tableau US&GA Visualization` | Dashboard preview images |
 | `README.md` | Project documentation |
 
 ## Repository Structure
