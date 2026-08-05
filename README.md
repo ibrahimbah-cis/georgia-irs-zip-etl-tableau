@@ -128,8 +128,8 @@ Georgia-IRS-ETL-Tableau/
 ├── x4d.csv
 ├── ic5.csv
 │
-└── assets/
-    └── Tableau US Visualization.png, Tableau Georgia Visualization.png
+└── images/
+    └── Tableau-US-Visualization.png, Tableau-Georgia-Visualization.png
 ```
 
 ## Key Results
