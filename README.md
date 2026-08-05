@@ -58,7 +58,7 @@ The extraction includes fields related to:
 The data is transformed by:
 
 - Filtering out invalid ZIP-code values
-- Restricting the individual challenge dataset to Georgia
+- Restricting the 2individual challenge dataset to Georgia
 - Converting IRS financial values into full dollar amounts
 - Removing unnecessary index fields
 - Renaming technical columns for readability
@@ -113,7 +113,8 @@ After filtering and selecting Georgia records, the final Georgia extract contain
 | [S14wic_ETL_IbrahimBah.twbx](S14wic_ETL_IbrahimBah.twbx) | Packaged Tableau workbook |
 | [x4d.csv](x4d.csv) | Cleaned nationwide dataset |
 | [ic5.csv](ic5.csv) | Cleaned Georgia-focused dataset |
-| [Tableau US Visualization.png](images/Tableau-US-Visualization.png),[Tableau Georgia Visualization.png](images/Tableau-Georgia-Visualization.png) | Dashboard preview images |
+| [Tableau US Visualization.png](images/Tableau-US-Visualization.png)
+[Tableau Georgia Visualization.png](images/Tableau-Georgia-Visualization.png) | Dashboard preview images |
 | [README.md] | Project documentation |
 
 ## Repository Structure
