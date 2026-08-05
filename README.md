@@ -109,12 +109,12 @@ After filtering and selecting Georgia records, the final Georgia extract contain
 
 | File | Description |
 |---|---|
-| `S14wic_PyETL_IbrahimBah.py` | Python and SQL extraction script |
-| `S14wic_ETL_IbrahimBah.twbx` | Packaged Tableau workbook |
-| `x4d.csv` | Cleaned nationwide dataset |
-| `ic5.csv` | Cleaned Georgia-focused dataset |
-| `Tableau US&GA Visualization` | Dashboard preview images |
-| `README.md` | Project documentation |
+| [S14wic_PyETL_IbrahimBah.py] | Python and SQL extraction script |
+| [S14wic_ETL_IbrahimBah.twbx] | Packaged Tableau workbook |
+| [x4d.csv] | Cleaned nationwide dataset |
+| [ic5.csv] | Cleaned Georgia-focused dataset |
+| [Tableau US Visualization.png],[Tableau Georgia Visualization.png] | Dashboard preview images |
+| [README.md] | Project documentation |
 
 ## Repository Structure
 
@@ -128,7 +128,7 @@ Georgia-IRS-ETL-Tableau/
 ├── ic5.csv
 │
 └── assets/
-    └── tableau-map-preview.png
+    └── Tableau US Visualization.png, Tableau Georgia Visualization.png
 ```
 
 ## Key Results
@@ -163,9 +163,7 @@ This project demonstrates experience with:
 
 Download and open:
 
-```text
-S14wic_ETL_IbrahimBah.twbx
-```
+[S14wic_ETL_IbrahimBah.twbx](S14wic_ETL_IbrahimBah.twbx)
 
 The workbook can be opened using Tableau Desktop or Tableau Public.
 
@@ -173,9 +171,7 @@ The workbook can be opened using Tableau Desktop or Tableau Public.
 
 Open:
 
-```text
-S14wic_PyETL_IbrahimBah.py
-```
+[S14wic_PyETL_IbrahimBah.py](S14wic_PyETL_IbrahimBah.py)
 
 The script shows the SQL extraction queries, Georgia filtering process, CSV export, and database connection workflow.
 
@@ -183,9 +179,8 @@ The script shows the SQL extraction queries, Georgia filtering process, CSV expo
 
 Open:
 
-```text
-ic5.csv
-```
+[ic5.csv](ic5.csv)
+[x4d.csv](x4d.csv)
 
 This file contains the cleaned Georgia-focused dataset used for analysis.
 
