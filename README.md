@@ -113,7 +113,7 @@ After filtering and selecting Georgia records, the final Georgia extract contain
 | [S14wic_ETL_IbrahimBah.twbx](S14wic_ETL_IbrahimBah.twbx) | Packaged Tableau workbook |
 | [x4d.csv](x4d.csv) | Cleaned nationwide dataset |
 | [ic5.csv](ic5.csv) | Cleaned Georgia-focused dataset |
-| [Tableau US Visualization.png](Tableau US Visualization.png),[Tableau Georgia Visualization.png](Tableau Georgia Visualization.png) | Dashboard preview images |
+| [Tableau US Visualization.png](images/Tableau-US-Visualization.png),[Tableau Georgia Visualization.png](images/Tableau-Georgia-Visualization.png) | Dashboard preview images |
 | [README.md] | Project documentation |
 
 ## Repository Structure
