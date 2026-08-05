@@ -113,13 +113,12 @@ After filtering and selecting Georgia records, the final Georgia extract contain
 | [S14wic_ETL_IbrahimBah.twbx](S14wic_ETL_IbrahimBah.twbx) | Packaged Tableau workbook |
 | [x4d.csv](x4d.csv) | Cleaned nationwide dataset |
 | [ic5.csv](ic5.csv) | Cleaned Georgia-focused dataset |
-| [Tableau US Visualization.png](assets/Tableau-US-Visualization.png)
-[Tableau Georgia Visualization.png](assets/Tableau-Georgia-Visualization.png) | Dashboard preview images |
-| [README.md] | Project documentation |
+| ![Tableau US Visualization.png](assets/Tableau-US-Visualization.png) | Dashboard preview image |
+![Tableau Georgia Visualization.png](assets/Tableau-Georgia-Visualization.png) | Dashboard preview image |
+| README.md | Project documentation |
 
 ## Repository Structure
 
-```text
 Georgia-IRS-ETL-Tableau/
 │
 ├── README.md
@@ -129,8 +128,9 @@ Georgia-IRS-ETL-Tableau/
 ├── ic5.csv
 │
 └── assets/
-    └── Tableau-US-Visualization.png, Tableau-Georgia-Visualization.png
-```
+    └── Tableau-US-Visualization.png 
+    └── Tableau-Georgia-Visualization.png
+
 
 ## Key Results
 
